@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="shortcut icon" href="images/raster/icons8.png" type="image/png">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <header class="header">
+                <div class="container">
+                    <div class="header__inner"> <a class="header__logo" href="/">masikov</a>
+                        <div class="header__menu menu">
+                            <div class="menu__burger"> <span></span> <span></span> <span></span> <span></span> </div>
+                            <nav class="menu__navigation">
+                                <ul>
+                                    <li> <a class="menu__link menu__link_active" href="/">математика</a> </li>
+                                    <li> <span class="menu__link">скоро</span> </li>
+                                    <li> <span class="menu__link">скоро</span> </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <section class="main-page">
+                    <div class="main-page__header page-header">
+                        <div class="container">
+                            <div class="page-header__inner"> <a href="" class="page-header__settings"> <svg
+                                        class="page-header__picture">
+                                        <use xlink:href="images/sprite.svg#settings"></use>
+                                    </svg> </a>
+                                <div class="page-header__small page-small">
+                                    <div class="container-small">
+                                        <div class="page-small__inner">
+                                            <div class="page-small__timer"> 0:00 <svg>
+                                                    <use xlink:href="images/sprite.svg#timer-icon"></use>
+                                                </svg> </div>
+                                            <div class="page-small__hint js-hint">подсказка</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-page-settings page-settings page-settings_open">
+                        <div class="container-small">
+                            <div class="page-settings__tabs settings-tabs">
+                                <nav class="settings-tabs__nav tabs-nav">
+                                    <ul class="tabs-nav__list">
+                                        <li class="tabs-nav__item tabs-nav__item_active" data-tab="1">сложение</li>
+                                        <li class="tabs-nav__item" data-tab="2">вычитание</li>
+                                        <li class="tabs-nav__item tabs-nav__item_deactive" data-tab="3">умножение</li>
+                                        <li class="tabs-nav__item tabs-nav__item_deactive" data-tab="4">деление</li>
+                                    </ul>
+                                </nav>
+                                <div class="settings-tabs__content tabs-content">
+                                    <div class="tabs-content__item content-item tabs-content__item_active" id="1">
+                                        <form action="">
+                                            <div class="content-item__nocheck"> выберите любой режим </div>
+                                            <div class="content-item__mode">
+                                                <h6 class="content-item__title">Сложение</h6>
+                                                <div class="content-item__description">Включите или выключите режим
+                                                    сложение </div>
+                                                <div class="content-item__checkbox default-checkbox"> <input
+                                                        class="content-item__checkbox_input" type="checkbox"
+                                                        id="mode-addition"> <label for="mode-addition"><span>выбрать
+                                                            режим</span></label> </div>
+                                            </div>
+                                            <div class="content-item__numbers">
+                                                <h6 class="content-item__title">Количество чисел</h6>
+                                                <div class="content-item__description">Выберите для вас подходящий
+                                                    уровень, можно использовать несколько</div>
+                                                <div class="content-item__radioboxes">
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="1n" checked> <label for="1n">Однозначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="2n"> <label for="2n">Двузначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="3n"> <label for="3n">Трехзначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="4n"> <label for="4n">Четырехзначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="5n"> <label for="5n">Пятизначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-addition"
+                                                            id="6n"> <label for="6n">Шестизначные</label> </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-item__timer">
+                                                <h6 class="content-item__title">Таймер</h6>
+                                                <div class="content-item__description">Выберите для себя время или
+                                                    отключите его</div>
+                                                <div class="content-item__timer_range"><input class="js-range"
+                                                        type="range" min="10" max="120" value="14"></div>
+                                                <div class="content-item__timer_count js-count-box"><input
+                                                        class="js-count" type="text"></div>
+                                            </div>
+                                            <div class="content-item__footer">
+                                                <div class="content-item__saved js-saved">сохранено!</div>
+                                                <div class="content-item__save js-save">сохранить</div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tabs-content__item content-item" id="2">
+                                        <form action="">
+                                            <div class="content-item__nocheck"> выберите любой режим </div>
+                                            <div class="content-item__mode">
+                                                <h6 class="content-item__title">Сложение</h6>
+                                                <div class="content-item__description">Включите или выключите режим
+                                                    сложение </div>
+                                                <div class="content-item__checkbox default-checkbox"> <input
+                                                        class="content-item__checkbox_input" type="checkbox"
+                                                        id="mode-deletion"> <label for="mode-deletion"><span>выбрать
+                                                            режим</span></label> </div>
+                                            </div>
+                                            <div class="content-item__numbers">
+                                                <h6 class="content-item__title">Количество чисел</h6>
+                                                <div class="content-item__description">Выберите для вас подходящий
+                                                    уровень, можно использовать несколько</div>
+                                                <div class="content-item__radioboxes">
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="1u" checked> <label for="1u">Однозначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="2u"> <label for="2u">Двузначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="3u"> <label for="3u">Трехзначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="4u"> <label for="4u">Четырехзначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="5u"> <label for="5u">Пятизначные</label> </div>
+                                                    <div class="content-item__radiobox default-checkbox"> <input
+                                                            class="js-numbers" type="checkbox" name="numbers-deletion"
+                                                            id="6u"> <label for="6u">Шестизначные</label> </div>
+                                                </div>
+                                            </div>
+                                            <div class="content-item__timer">
+                                                <h6 class="content-item__title">Таймер</h6>
+                                                <div class="content-item__description">Выберите для себя время или
+                                                    отключите его</div>
+                                                <div class="content-item__timer_range"><input class="js-range"
+                                                        type="range" min="10" max="120" value="14"></div>
+                                                <div class="content-item__timer_count js-count-box"><input
+                                                        class="js-count" type="text"></div>
+                                            </div>
+                                            <div class="content-item__footer">
+                                                <div class="content-item__saved js-saved">сохранено!</div>
+                                                <div class="content-item__save js-save">сохранить</div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <footer class="footer"></footer>
+    </div>
+    <script src="js/page-settings.js"></script>
+</body>
+
+</html>
