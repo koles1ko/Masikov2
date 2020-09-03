@@ -55,14 +55,14 @@
                             <div class="page-settings__tabs settings-tabs">
                                 <nav class="settings-tabs__nav tabs-nav">
                                     <ul class="tabs-nav__list">
-                                        <li class="tabs-nav__item tabs-nav__item_active" data-tab="1">сложение</li>
-                                        <li class="tabs-nav__item" data-tab="2">вычитание</li>
+                                        <li class="tabs-nav__item tabs-nav__item_active" data-tab="add">сложение</li>
+                                        <li class="tabs-nav__item" data-tab="subtract">вычитание</li>
                                         <li class="tabs-nav__item tabs-nav__item_deactive" data-tab="3">умножение</li>
                                         <li class="tabs-nav__item tabs-nav__item_deactive" data-tab="4">деление</li>
                                     </ul>
                                 </nav>
                                 <div class="settings-tabs__content tabs-content">
-                                    <div class="tabs-content__item content-item tabs-content__item_active" id="1">
+                                    <div class="tabs-content__item content-item tabs-content__item_active" id="add">
                                         <form action="">
                                             <div class="content-item__nocheck"> выберите любой режим </div>
                                             <div class="content-item__mode">
@@ -71,7 +71,7 @@
                                                     сложение </div>
                                                 <div class="content-item__checkbox default-checkbox"> <input
                                                         class="content-item__checkbox_input" type="checkbox"
-                                                        id="mode-addition"> <label for="mode-addition"><span>выбрать
+                                                        id="mode-add"> <label for="mode-add"><span>выбрать
                                                             режим</span></label> </div>
                                             </div>
                                             <div class="content-item__numbers">
@@ -104,7 +104,7 @@
                                                 <div class="content-item__description">Выберите для себя время или
                                                     отключите его</div>
                                                 <div class="content-item__timer_range"><input class="js-range"
-                                                        type="range" min="10" max="120" value="14"></div>
+                                                        type="range" min="10" max="120"></div>
                                                 <div class="content-item__timer_count js-count-box"><input
                                                         class="js-count" type="text"></div>
                                             </div>
@@ -114,16 +114,16 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="tabs-content__item content-item" id="2">
+                                    <div class="tabs-content__item content-item" id="subtract">
                                         <form action="">
                                             <div class="content-item__nocheck"> выберите любой режим </div>
                                             <div class="content-item__mode">
-                                                <h6 class="content-item__title">Сложение</h6>
+                                                <h6 class="content-item__title">Вычитание</h6>
                                                 <div class="content-item__description">Включите или выключите режим
                                                     сложение </div>
                                                 <div class="content-item__checkbox default-checkbox"> <input
                                                         class="content-item__checkbox_input" type="checkbox"
-                                                        id="mode-deletion"> <label for="mode-deletion"><span>выбрать
+                                                        id="mode-sub"> <label for="mode-sub"><span>выбрать
                                                             режим</span></label> </div>
                                             </div>
                                             <div class="content-item__numbers">
@@ -156,7 +156,7 @@
                                                 <div class="content-item__description">Выберите для себя время или
                                                     отключите его</div>
                                                 <div class="content-item__timer_range"><input class="js-range"
-                                                        type="range" min="10" max="120" value="14"></div>
+                                                        type="range" min="10" max="120"></div>
                                                 <div class="content-item__timer_count js-count-box"><input
                                                         class="js-count" type="text"></div>
                                             </div>
