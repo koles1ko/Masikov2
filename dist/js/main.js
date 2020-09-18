@@ -114,44 +114,64 @@ function countDigits(a) {
 };
 function play() {
 	boom = JSON.parse(localStorage.getItem('typeOfNumber'));
-
+	console.log(boom);
 	if (blockResult.classList.contains('active')) {
 		endGame()
 	} else {
 		if (boom != null) {
-
 			startGame()
 			function getNumbers() {
 				resultAction.value = '';
+				let randomNumberLength;
 				function getRandomElem(mass) {
 					let randomNumber;
-					do {
-						randomNumber = Math.floor(Math.random() * mass.length);
-					}
-					while (mass[randomNumber] == 0)
-					currentLength = randomNumber + 1;
-					console.log(mass);
+					let arrayOfNumberLength = (JSON.parse(localStorage.getItem('typeOfNumber'))).filter(item => item != 0);
+					console.log(arrayOfNumberLength);
+
+					randomNumberLength = arrayOfNumberLength[Math.floor(Math.random()*arrayOfNumberLength.length)];
+					console.log(randomNumberLength);
+					randomNumberLength = randomNumberLength.slice(0, 1)
+					console.log(randomNumberLength);
+					randomNumber = Number(randomNumberLength);
+					currentLength = randomNumber;
 				};
 				function getNumberOne() {
 					getRandomNumber()
 					number1.textContent = num;
-					num1 = parseInt(number1.textContent, 10);
+					if ( num.toString().length == randomNumberLength ) {
+						console.log('первое число');
+						num1 = parseInt(number1.textContent, 10);
+					}
+					else {
+						getNumberOne();
+					}
+					// num1 = parseInt(number1.textContent, 10);
 				}
 				function getNumberTwo() {
 					getRandomNumber()
 					number2.textContent = num;
-					num2 = parseInt(number2.textContent, 10);
+					if ( num.toString().length == randomNumberLength ) {
+						console.log('второе число');
+						num2 = parseInt(number2.textContent, 10);
+					} 
+					else {
+						getNumberTwo();
+					}
 				}
 				function getRandomNumber() {
 					do {
 						num = Math.floor(Math.random() * Math.pow(10, currentLength));
+						
 					} while (num == 0);
 
 				}
+
 				getRandomElem(boom);
 				getNumberOne();
 				getNumberTwo();
 				operationOfMath(num1, num2);
+				// console.log(num1);
+				// console.log(num2);
 				resultMachineDigits = countDigits(resultMachine);
 				resultAction.setAttribute('maxlength', resultMachineDigits);
 				console.log('длина числа робота = ' + resultMachineDigits);
@@ -178,7 +198,6 @@ function play() {
 						numbers.forEach(item => {
 							item.style.opacity = 0;
 						})
-						console.log(numbers);
 					} else {
 						resultAction.style.color = 'red';
 						resultAction.style.borderColor = 'red';

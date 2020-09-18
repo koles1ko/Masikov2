@@ -68,7 +68,7 @@ function findActive(arr) {
 	arr.forEach(item => {
 		item.querySelector('.js-count').value = item.querySelector('.js-range').value;
 		if (item.classList.contains('tabs-content__item_active')) {
-			let modeCheck = item.querySelector('.content-item__checkbox_input');
+			// let modeCheck = item.querySelector('.content-item__checkbox_input');
 			let saveButton = item.querySelector('.js-save');
 			let savedText = item.querySelector('.js-saved');
 			let noCheck = item.querySelector('.content-item__nocheck');
@@ -78,8 +78,46 @@ function findActive(arr) {
 			let jsRange = item.querySelector('.js-range');
 			let checkLeft = JSON.parse(localStorage.getItem('numberOfTimerLeft'));
 			let checkTimer = JSON.parse(localStorage.getItem('numberOfTimerCount'));
+			let numberLengthsFromLS = JSON.parse(localStorage.getItem('typeOfNumber'));
 			let verify = JSON.parse(localStorage.getItem('modeCheck'));
 			let mathOperation = item.getAttribute('id');
+			console.log(numberLengthsFromLS);
+			console.log(numberLengths);
+			if ( verify ) {
+				
+				if ( JSON.parse(localStorage.getItem('mode-add')) != true ) {
+					modeAdd.setAttribute('checked', false);
+				} else {
+					modeAdd.setAttribute('checked', true);
+					console.log(modeAdd);
+				}
+				if ( (JSON.parse(localStorage.getItem('mode-sub')) != true) || (JSON.parse(localStorage.getItem('mode-sub')) == null)) {
+					modeSub.setAttribute('checked', false);
+					console.log(JSON.parse(localStorage.getItem('mode-sub')));
+				} else {
+					modeSub.setAttribute('checked', true);
+					console.log(modeSub);
+				}
+
+			}
+
+			for (let i = 0; i < numberLengths.length; i++) {
+				if ( numberLengthsFromLS == null ) {
+					console.log('ypa');
+				} else if (numberLengths[i].getAttribute('id') == numberLengthsFromLS[i]) {
+					console.log(numberLengthsFromLS[i]);
+					numberLengths[i].setAttribute('checked', true)
+				} 
+			}
+
+
+			let arr = [];
+			arr.push(JSON.parse(localStorage.getItem('mode-add')), JSON.parse(localStorage.getItem('mode-sub')))
+			console.log(arr);
+
+
+
+
 
 			console.log('checkTimer ' + checkTimer);
 			console.log(mathOperation);
@@ -104,10 +142,6 @@ function findActive(arr) {
 				}
 			}
 			setRangeCount();
-			function checkChooseMode() {
-				console.log(localStorage.getItem('mode-add'));
-			}
-			checkChooseMode();
 			modeCheck.addEventListener('click', () => {
 				let nameOfOperation = modeCheck.getAttribute('id')
 				if (modeCheck.checked) {
@@ -160,6 +194,8 @@ function findActive(arr) {
 				for (let i = 0; i < numberLengths.length; i++) {
 					if (numberLengths[i].checked) {
 						idValue.push(numberLengths[i].getAttribute('id'));
+					} else {
+						idValue.push(0);
 					}
 				}
 				if ((idValue.length != 0) && modeCheck.checked) {
